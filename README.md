@@ -52,6 +52,26 @@ Perform exploratory data analysis (EDA) on price movements.
 
 Identify significant trends and anomalies.
 
+
+Workflow:
+
+
+crypto-bot-binance/
+├── data/               # Raw and processed datasets
+├── src/                # Scripts for data extraction, transformation, and visualization
+│   ├── extract.py      # Binance API extraction script
+│   ├── transform.py    # Data cleaning and transformation scripts
+│   ├── analyze.py      # KPI calculations, moving averages, risk analysis
+│   ├── ml_model.py     # Machine learning models for sentiment analysis and forecasting
+│   └── visualize.py    # Data visualization scripts
+├── models/             # Trained ML models
+├── notebooks/          # Jupyter notebooks for exploratory analysis
+├── requirements.txt    # Python dependencies
+├── README.md           # Project overview
+└── LICENSE             # License file (if applicable)
+
+
+
 Implementation:
 
 For the bot service to work, a number of ML models must be created and tested .. All scripts run in batch mode by loading some input data in Colab and storing some output files. The scripts are located in the scripts module. Binance data was extracted using API, then loaded in Python for configuration and analysis
