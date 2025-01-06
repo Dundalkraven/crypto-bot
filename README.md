@@ -43,5 +43,60 @@ Project Workflow:
 ![workflow](https://github.com/user-attachments/assets/026a7e32-46f0-4f05-a17d-5b95871a6c1f)
 
 
+Steps:
+collection /analysis / exploration
+
+Extract historical data for newly listed coins.
+
+Perform exploratory data analysis (EDA) on price movements.
+
+Identify significant trends and anomalies.
+
+Implementation:
+
+For the bot service to work, a number of ML models must be created and tested .. All scripts run in batch mode by loading some input data in Colab and storing some output files. The scripts are located in the scripts module. Binance data was extracted using API, then loaded in Python for configuration and analysis
+
+These are the files:
+
+python -m scripts.download_binance -c config.json
+python -m scripts.binance_api
+python -m scripts.clean
+python -m scripts.labels -c config.json
+python -m scripts.BQ
+python -m scripts.binominaltest
+python -m scripts.merge
+python -m scripts.falling
+
+
+Download the latest historic data: python -m scripts.download_binance -c config.json
+
+It uses Binance API but you can use any other data source or download data manually using other scripts
+Merge several historic datasets into one dataset: python -m scripts.merge -c config.json
+
+This script solves two problems: 1) there could be other sources like depth data or futures 2) a data source may have gaps so we need to produce a regular time raster in the output file
+
+Generate Charts
+
+This script is intended for visulaizing coins, calculating API and analysis:
+Script: python -m scripts.visuals
+
+
+![model_comparison](https://github.com/user-attachments/assets/f1decd05-652e-4392-a5df-449ce31d154c)
+
+
+![calcs_volatility](https://github.com/user-attachments/assets/1b70f7bb-8320-449a-854c-39733e8d23f5)
+
+
+![big_5_chart](https://github.com/user-attachments/assets/a777c0ad-78fd-4197-8f8a-73c0438b04ff)
+
+
+![big_5_bg](https://github.com/user-attachments/assets/8a8e7815-37e3-434d-ad5a-38bcbd17fba3)
+
+
+![big_5_chart3](https://github.com/user-attachments/assets/136a24bd-081f-49de-b3b8-7fec7f07c259)
+
+
+![big_5_chart4](https://github.com/user-attachments/assets/08571bd0-f190-4c11-ac97-2d9435d2100c)
+
 
 
