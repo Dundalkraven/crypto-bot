@@ -90,7 +90,7 @@ Script: python -m scripts.visuals
 ![big_5_chart](https://github.com/user-attachments/assets/a777c0ad-78fd-4197-8f8a-73c0438b04ff)
 
 
-![big_5_bg](https://github.com/user-attachments/assets/8a8e7815-37e3-434d-ad5a-38bcbd17fba3)
+
 
 
 ![big_5_chart3](https://github.com/user-attachments/assets/136a24bd-081f-49de-b3b8-7fec7f07c259)
